@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const category = require("../controller/category");
 
-router.route("/category").get(category.list).post(category.create);
+router.route("/").get(category.list).post(category.create);
 
 router
   .route("/:id")

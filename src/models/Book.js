@@ -24,11 +24,6 @@ const bookSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    genre: {
-      type: String,
-      trim: true,
-      required: true,
-    },
     price: {
       type: Number,
       default: 0,
