@@ -13,6 +13,7 @@ app.use(express.json());
 
 //To accept to form data
 app.use(express.urlencoded({ extended: true }));
+app.use(require("./src/middlewares/authentication"));
 
 app.all("/", (req, res) => {
   res.send({
@@ -21,13 +22,10 @@ app.all("/", (req, res) => {
   });
 });
 
-app.use(require("./src/middlewares/authentication"));
 app.use(require("./src/middlewares/queryHandler"));
 
 /* ----Router------ */
-
-app.use("/book", require("./src/routes/Book"));
-app.use("/category", require("./src/routes/category"));
+app.use(require("./src/routes"));
 
 /* ----Router------ */
 

@@ -14,6 +14,15 @@ const userSchema = new mongoose.Schema(
       trim: true,
       set: (password) => passEncrypt(password),
     },
+    address: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     collection: "user",
